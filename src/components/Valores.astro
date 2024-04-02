@@ -1,0 +1,17 @@
+---
+interface Props {
+	valores: string[]
+    tam: number
+}
+
+const { valores,tam } = Astro.props
+var size =valores.length
+var disminution=tam/size
+---
+
+<div>
+    {valores.toString()}
+    {disminution}
+
+
+</div>
