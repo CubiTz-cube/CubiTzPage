@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.9",
     "@fontsource/aldrich": "^5.0.18",
     "@fontsource/lekton": "^5.0.12",
     "astro": "^4.5.6",

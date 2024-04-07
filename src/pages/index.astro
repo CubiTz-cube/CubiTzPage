@@ -1,14 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/NavBar.astro';
+import Stars from '../components/Stars.astro';
 ---
 
 <Layout title="Welcome to Astro.">
+	<Stars />
 	<header>
-		
+		<Navbar links={["inicio", "quienes_somos", "proyectos", "equipo"]} logo='/Cubitz.png'/>
 	</header>
-	<main>
+	<main class="bg">
 		<sectiona id="inicio"></section>
-			
+			a
 		<section id="quienes_somos">
 			
 		</section>
@@ -18,12 +21,32 @@ import Layout from '../layouts/Layout.astro';
 		<section id="tecnologia"></section>
 		
 		<section id="equipo"></section>
-
-		
 	</main>
 </Layout>
 <style>
-	main{
-		color: white;
+	body{
+		margin: 0;
+		padding: 0;
+		height: 1000px;
 	}
-</style>
+	header {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		display: flex;
+		justify-content: center;
+		display: sticky;
+		padding-block: 10px;
+	}
+	main {
+  		margin-inline: 10%;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+	#inicio {
+		outline: 2px solid #FFFB;
+		border-radius: 20px;
+		height: 700px;
+	}
+</style>../components/Stars.tsx

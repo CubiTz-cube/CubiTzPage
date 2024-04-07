@@ -1,0 +1,68 @@
+---
+const circles = Array(15).fill(0);
+---
+<ul class="circles">
+    {circles.map(() => (
+        <li></li>
+    ))}
+</ul>
+
+<script>
+    const circles = document.querySelectorAll('.circles li');
+
+    circles.forEach((circle: HTMLElement) => {
+        const top = Math.random() * window.innerHeight;
+        const left = Math.random() * window.innerWidth;
+        const animationDuration = Math.random() * 4 + 1;
+        const scale = Math.random() * 10 + 5;
+
+        circle.style.top = `${top}px`;
+        circle.style.left = `${left}px`;
+        circle.style.animationDuration = `${animationDuration}s`;
+        circle.style.width = `${scale}px`;
+        circle.style.height = `${scale}px`;
+
+        circle.addEventListener('animationiteration', () => {
+            const newTop = Math.random() * window.innerHeight;
+            const newLeft = Math.random() * window.innerWidth;
+            circle.style.top = `${newTop}px`;
+            circle.style.left = `${newLeft}px`;
+        });
+    });
+</script>
+
+<style>
+.circles{
+    position: absolute;
+    transform: ;
+}
+
+.circles li {
+    z-index: -1;
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgb(255, 255, 255, 0.5);
+    animation: animate 1s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+        transform: rotate(45deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+        transform: rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2);
+        transform: rotate(45deg);
+    }
+}
+</style>
