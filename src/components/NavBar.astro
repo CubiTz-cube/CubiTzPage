@@ -4,11 +4,44 @@ interface Props {
 	links: string[];
 }
 
-const { links } = Astro.props;
+const { logo,links } = Astro.props;
 ---
-<img src="/Cubitz.png" alt="">
-<nav>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#tecnologias">Tecnologias</a>
-    <a href="#equipo">Equipo</a>
-</nav>
+<div>
+    <img src="/isotipo.svg" alt="">
+    <nav>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#tecnologias">Tecnologias</a>
+        <a href="#equipo">Equipo</a>
+    </nav>
+</div>
+
+<style>
+    div{
+        background-color: rgb(0, 0, 0 , 0.8);
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        
+        display: flex;
+        align-items: center;
+        padding-block: 0.4rem;
+        padding-inline: 1.5rem;
+        gap: 1rem;
+
+        font-family: "aldrich", sans-serif;
+    }
+    nav {
+        display: flex;
+        gap: 1rem;
+    }
+    img {
+        width: 1.8rem;
+    }
+    a {
+        text-decoration: none;
+        color: var(--textColor-dark);
+        transition: color 0.2s cubic-bezier(.4,0,.2,1);
+    }
+    a:hover {
+        color: var(--cubitz2-dark);
+    }
+</style>
