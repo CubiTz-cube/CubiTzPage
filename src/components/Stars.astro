@@ -10,23 +10,24 @@ const circles = Array(15).fill(0);
 <script>
     const circles = document.querySelectorAll('.circles li');
 
-    circles.forEach((circle: HTMLElement) => {
+    circles.forEach((circle) => {
+        const htmlCircle = circle as HTMLElement;
         const top = Math.random() * window.innerHeight;
         const left = Math.random() * window.innerWidth;
         const animationDuration = Math.random() * 4 + 1;
         const scale = Math.random() * 10 + 5;
 
-        circle.style.top = `${top}px`;
-        circle.style.left = `${left}px`;
-        circle.style.animationDuration = `${animationDuration}s`;
-        circle.style.width = `${scale}px`;
-        circle.style.height = `${scale}px`;
+        htmlCircle.style.top = `${top}px`;
+        htmlCircle.style.left = `${left}px`;
+        htmlCircle.style.animationDuration = `${animationDuration}s`;
+        htmlCircle.style.width = `${scale}px`;
+        htmlCircle.style.height = `${scale}px`;
 
         circle.addEventListener('animationiteration', () => {
             const newTop = Math.random() * window.innerHeight;
             const newLeft = Math.random() * window.innerWidth;
-            circle.style.top = `${newTop}px`;
-            circle.style.left = `${newLeft}px`;
+            htmlCircle.style.top = `${newTop}px`;
+            htmlCircle.style.left = `${newLeft}px`;
         });
     });
 </script>
