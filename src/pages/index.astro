@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/NavBar.astro';
 import Stars from '../components/Stars.astro';
+import Valores from '../components/Valores.astro';
 ---
 
 <Layout title="CubiTz">
@@ -10,10 +11,12 @@ import Stars from '../components/Stars.astro';
 		<Navbar links={["inicio", "quienes_somos", "proyectos", "equipo"]} logo='/Cubitz.svg'/>
 	</header>
 	<main>
-		<sectiona id="inicio"></section>
+		<section id="inicio">
 			a
+		</section>	
+		
 		<section id="quienes_somos">
-			
+			<Valores tam={200} valores={["Valor1","Valor2","Valor3"]}/>
 		</section>
 		
 		<section id="proyectos"></section>
