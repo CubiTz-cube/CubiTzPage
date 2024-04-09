@@ -4,5 +4,5 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://cubitz-cube.github.io',
+  site: 'https://cubiTz-cube.github.io',
 });
