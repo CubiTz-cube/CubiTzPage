@@ -1,5 +1,10 @@
 ---
-const circles = Array(15).fill(0);
+interface Props {
+    amount: number;
+}
+
+const { amount } = Astro.props;
+const circles = Array(amount).fill(0);
 ---
 <ul class="circles">
     {circles.map(() => (
@@ -47,6 +52,7 @@ const circles = Array(15).fill(0);
     height: 20px;
     background: rgb(255, 255, 255, 0.5);
     animation: animate 1s ease-in-out infinite;
+    animation-delay: 200ms;
 }
 
 @keyframes animate {
