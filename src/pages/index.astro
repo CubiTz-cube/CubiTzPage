@@ -3,16 +3,19 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/NavBar.astro';
 import Stars from '../components/Stars.astro';
 import Valores from '../components/Valores.astro';
+import FloatLetters from '../components/FloatLetters.astro';
 ---
 
 <Layout title="CubiTz">
 	<Stars amount={10}/>
 	<header>
-		<Navbar links={["Inicio", "¿Quienes_Somos?", "Proyectos", "Equipo"]} logo='isotipo.svg'/>
+		<Navbar links={["Inicio", "¿Quienes_Somos?", "Proyectos", "Equipo"]}/>
 	</header>
 	<main>
-		<section id="inicio">
-			a
+		<section class="inicio">
+			<FloatLetters letters={["C","u","b","i","T","z"]}/>
+			<p>Description ###################################################</p>
+			<a href="" target="_blank">Contactenos</a>
 		</section>	
 		
 		<section id="¿quienes_somos?">
@@ -27,29 +30,56 @@ import Valores from '../components/Valores.astro';
 	</main>
 </Layout>
 <style>
+	main {
+		padding-inline: 8%;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
 	body{
 		margin: 0;
 		padding: 0;
-		height: 1000px;
 	}
 	header {
 		position: sticky;
 		top: 0;
 		z-index: 2;
 		display: flex;
-		justify-content: center;
+		justify-content: space-around;
 		display: sticky;
 		padding-block: 10px;
 	}
-	main {
-  		margin-inline: 10%;
+	.inicio {
 		display: flex;
 		flex-direction: column;
-		height: 100%;
-	}
-	#inicio {
-		outline: 2px solid #FFFB;
-		border-radius: 20px;
+		
+		outline: 2px solid #FFF;
+		border-radius: 40px;
 		height: 700px;
+	}
+	.inicio p{
+		align-self: center;
+		margin: 140px 0 20px 0;
+		font-size: 1.5rem;
+		width: 25%;
+		text-wrap: wrap;
+		overflow-wrap: break-word;
+		text-align: center;
+	}
+	.inicio a{
+		align-self: center;
+		color: var(--background-dark);
+		text-decoration: none;
+		font-family: "aldrich", sans-serif;
+		font-size: x-large;
+		background-color: var(--cubitz1-dark);
+		font-size: 1.8rem;
+		padding-inline: 1.2rem;
+		padding-block: 0.5rem;
+		border-radius: 18px;
+		transition: background-color 0.2s cubic-bezier(.4,0,.2,1);
+	}
+	.inicio a:hover{
+		background-color: hsl(68, 100%, 90%);
 	}
 </style>

@@ -1,11 +1,10 @@
 ---
 import Icon from "./isotipo.astro";
 interface Props {
-    logo: string;
 	links: string[];
 }
 
-const { logo,links } = Astro.props;
+const { links } = Astro.props;
 ---
 <div>
     <nav>
@@ -39,6 +38,7 @@ const { logo,links } = Astro.props;
         width: 1.8rem;
     }
     a {
+        font-size: 1.1rem;
         text-decoration: none;
         color: var(--textColor-dark);
         transition: color 0.2s cubic-bezier(.4,0,.2,1);

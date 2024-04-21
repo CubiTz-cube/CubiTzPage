@@ -1,0 +1,74 @@
+---
+interface Props {
+	letters: string[];
+}
+
+const { letters } = Astro.props;
+---
+<div class="container">
+    {
+        letters.map((letter, index) => (
+            <p class="text">{letter}</p>
+        ))
+    }
+</div>
+
+<style>
+    .container {
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-inline: 150px;
+        height: 250px;
+    }
+    .text {
+        cursor: default;
+        height: max-content;
+        margin: 0;
+        font-family: "aldrich", sans-serif;
+        font-size: 9rem;
+        position: relative;
+        animation: space 1.8s ease-in-out infinite alternate;
+    }
+    .container p:nth-child(1) {
+        animation-delay: 1s;
+        rotate: -20deg;
+        align-self: flex-start;
+    }
+    .container p:nth-child(2) {
+        animation-delay: 2s;
+        rotate: 10deg;
+        align-self: flex-end;
+    }
+    .container p:nth-child(3) {
+        animation-delay: 3s;
+        rotate: 15deg;
+        align-self: flex-start;
+    }
+    .container p:nth-child(4) {
+        animation-delay: 4s;
+        rotate: -5deg;
+        align-self: flex-end;
+    }
+    .container p:nth-child(5) {
+        animation-delay: 5s;
+        rotate: 15deg;
+        align-self: flex-start;
+    }
+    .container p:nth-child(6) {
+        animation-delay: 6s;
+        rotate: -15deg;
+        align-self: flex-end;
+        scale: 1.2;
+    }
+    @keyframes space {
+        from {
+            bottom: 0px;
+        }
+
+        to {
+            bottom: 10px;
+        }
+    }
+</style>
