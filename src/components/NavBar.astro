@@ -1,4 +1,5 @@
 ---
+import Icon from "./isotipo.astro";
 interface Props {
     logo: string;
 	links: string[];
@@ -8,10 +9,10 @@ const { logo,links } = Astro.props;
 ---
 <div>
     <nav>
-        <a href="#inicio"><img src="/isotipo.svg" alt=""></a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#tecnologias">Tecnologias</a>
-        <a href="#equipo">Equipo</a>
+        <a href=`#${links[0].toLowerCase()}`><Icon /></a>
+        {links.slice(1).map((link) => (
+            <a href={`#${link.toLowerCase()}`}>{link.replace("_", " ")}</a>
+        ))}
     </nav>
 </div>
 
@@ -32,6 +33,7 @@ const { logo,links } = Astro.props;
     nav {
         display: flex;
         gap: 1rem;
+        align-items: center;
     }
     img {
         width: 1.8rem;
