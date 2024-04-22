@@ -16,6 +16,9 @@ import FloatLetters from '../components/FloatLetters.astro';
 			<FloatLetters letters={["C","u","b","i","T","z"]}/>
 			<p>Description ###################################################</p>
 			<a href="" target="_blank">Contactenos</a>
+			<div class="planet1"></div>
+			<div class="planet2"></div>
+			<div class="planet3"></div>
 		</section>	
 		
 		<section id="¿quienes_somos?">
@@ -60,6 +63,29 @@ import FloatLetters from '../components/FloatLetters.astro';
 		border-top-right-radius: 40px;
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
+	}
+	.planet1 {
+		z-index: 1;
+		width: 8vw;
+		height: 8vw;
+		background-color: var(--cubitz1-dark);
+		transform: rotate(45deg);
+		position: absolute;
+		margin: auto;
+		left: 1.5625vw;
+		top: 25vw;
+		box-shadow: 0 0 31.25rem 4vw rgb(235, 255, 104, 0.5);
+	}
+	.planet2 {
+		z-index: -1;
+		width: 6vw;
+		height: 6vw;
+		background-color: var(--cubitz2-dark);
+		transform: rotate(45deg);
+		position: absolute;
+		margin: auto;
+		inset: 0;
+		box-shadow: 0 0 31.25rem 5vw rgb(72, 157, 255, 0.5);
 	}
 	.inicio p{
 		align-self: center;
