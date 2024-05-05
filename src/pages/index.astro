@@ -4,10 +4,11 @@ import Navbar from '../components/NavBar.astro';
 import Stars from '../components/Stars.astro';
 import Valores from '../components/Valores.astro';
 import FloatLetters from '../components/FloatLetters.astro';
+import Cube from '../components/Cube.astro';
 ---
 
 <Layout title="CubiTz">
-	<Stars amount={10}/>
+	<Stars/>
 	<header>
 		<Navbar links={["Inicio", "¿Quienes_Somos?", "Proyectos", "Equipo"]}/>
 	</header>
@@ -16,9 +17,9 @@ import FloatLetters from '../components/FloatLetters.astro';
 			<FloatLetters letters={["C","u","b","i","T","z"]}/>
 			<p>Description ###################################################</p>
 			<a href="" target="_blank">Contactenos</a>
-			<div class="planet1"></div>
-			<div class="planet2"></div>
-			<div class="planet3"></div>
+			<div class="planet1"><Cube/></div>
+			<div class="planet2"><Cube/></div>
+			<div class="planet3"><Cube/></div>
 		</section>	
 		
 		<section id="¿quienes_somos?">
@@ -65,18 +66,28 @@ import FloatLetters from '../components/FloatLetters.astro';
 		border-bottom-right-radius: 10px;
 	}
 	.planet1 {
-		z-index: 1;
-		width: 8vw;
-		height: 8vw;
-		background-color: var(--cubitz1-dark);
-		transform: rotate(45deg);
 		position: absolute;
 		margin: auto;
-		left: 1.5625vw;
-		top: 25vw;
-		box-shadow: 0 0 31.25rem 4vw rgb(235, 255, 104, 0.5);
+		scale: 0.5;
+		left: 0;
+		top:40%;
 	}
 	.planet2 {
+		position: absolute;
+		margin: auto;
+		scale: 0.5;
+		right: 0;
+		left: 0;
+		top:40%;
+	}
+	.planet3 {
+		position: absolute;
+		margin: auto;
+		scale: 0.5;
+		left: 0;
+		top:40%;
+	}
+	.planet2a {
 		z-index: -1;
 		width: 6vw;
 		height: 6vw;
@@ -87,7 +98,7 @@ import FloatLetters from '../components/FloatLetters.astro';
 		inset: 0;
 		box-shadow: 0 0 31.25rem 5vw rgb(72, 157, 255, 0.5);
 	}
-	.planet3 {
+	.planet3a {
 		z-index: -1;
 		width: 5vw;
 		height: 5vw;

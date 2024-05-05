@@ -1,80 +1,62 @@
 ---
 interface Props {
-    amount: number;
 }
 
-const { amount } = Astro.props;
-const circles = Array(amount).fill(0);
+const {  } = Astro.props;
 ---
-<ul class="circles">
-    {circles.map(() => (
-        <li></li>
-    ))}
-</ul>
+<div class="container">
+    <div class="start start-1"></div>
+    <div class="start start-2"></div>
+    <div class="start start-3"></div>
+</div>
 
 <script>
-    const circles = document.querySelectorAll('.circles li');
-    const circlesContainer = document.querySelector('.circles')  as HTMLElement;
-
-    circles.forEach((circle) => {
-        const htmlCircle = circle as HTMLElement;
-        const top = Math.random() * circlesContainer.clientHeight;
-        const left = Math.random() * circlesContainer.clientWidth;
-        const animationDuration = Math.random() * 4 + 1;
-        const scale = Math.random() * 10 + 5;
-
-        htmlCircle.style.top = `${top-scale}px`;
-        htmlCircle.style.left = `${left-scale}px`;
-        htmlCircle.style.animationDuration = `${animationDuration}s`;
-        htmlCircle.style.width = `${scale}px`;
-        htmlCircle.style.height = `${scale}px`;
-
-        circle.addEventListener('animationiteration', () => {
-            const newTop = Math.random() * circlesContainer.clientHeight;
-            const newLeft = Math.random() * circlesContainer.clientWidth;
-            htmlCircle.style.top = `${newTop-scale}px`;
-            htmlCircle.style.left = `${newLeft-scale}px`;
-        });
-    });
+    const COLORS = ['#fff2','#fff4','#fff7','#fffc'];
+   function generateStartLayer(size:string,duration:string,amount:number,selector:string) {
+    const layer = [];
+    const totalStart = amount
+    for (let i = 0; i < totalStart; i++) {
+        const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+        const x = Math.floor(Math.random() * 100);
+        const y = Math.floor(Math.random() * 100);
+        const shadow = `${x}vw ${y}vh 0 ${color}, ${x}vw ${y+100}vh 0 ${color}`;
+        layer.push(shadow);
+    }
+    const contairner = document.querySelector(selector) as HTMLElement;
+    contairner?.style.setProperty('--start-layer', layer.join(','));
+    contairner?.style.setProperty('--size', size);
+    contairner?.style.setProperty('--duration', duration);
+}
+    generateStartLayer('1px','25s',200,'.start-1');
+    generateStartLayer('2px','35s',200,'.start-2');
+    generateStartLayer('4px','45s',200,'.start-3');
 </script>
 
 <style>
-.circles{
+.container{
     z-index: -5;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 0;
+    position: fixed;
+    inset: 0;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
 }
-
-.circles li {
-    z-index: -1;
+.start{
+    width: var(--size);
+    height: var(--size);
+    background: white;
+    box-shadow: var(--start-layer);
     position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgb(255, 255, 255, 0.5);
-    animation: animate 1s ease-in-out infinite;
-    animation-delay: 200ms;
+    opacity: 75%;
+    animation: moveStart var(--duration, 20s) linear infinite;
 }
 
-@keyframes animate {
-    0% {
-        opacity: 0;
-        transform: scale(1.2);
-        transform: rotate(45deg);
+@keyframes moveStart {
+    from {
+        transform: translateY(0);
     }
-    50% {
-        opacity: 1;
-        transform: scale(1);
-        transform: rotate(45deg);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(1.2);
-        transform: rotate(45deg);
+    to {
+        transform: translateY(-100vh);
     }
 }
 </style>
