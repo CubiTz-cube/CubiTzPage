@@ -1,16 +1,17 @@
 ---
-import Icon from "./isotipo.astro";
+import Icon from "./svg/isotipo.astro";
 interface Props {
+    names: string[];
 	links: string[];
 }
 
-const { links } = Astro.props;
+const { names,links } = Astro.props;
 ---
 <div>
     <nav>
-        <a href=`#${links[0].toLowerCase()}`><Icon /></a>
-        {links.slice(1).map((link) => (
-            <a href={`#${link.toLowerCase()}`}>{link.replace("_", " ")}</a>
+        <a href="#${links[0]}"><Icon /></a>
+        {links.slice(1).map((link,index) => (
+            <a href={`#${link}`}>{names[index]}</a>
         ))}
     </nav>
 </div>

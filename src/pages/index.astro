@@ -5,30 +5,58 @@ import Stars from '../components/Stars.astro';
 import Valores from '../components/Valores.astro';
 import FloatLetters from '../components/FloatLetters.astro';
 import Cube from '../components/Cube.astro';
+import ProyectCard from '../components/ProyectCard.astro';
 ---
 
 <Layout title="CubiTz">
 	<Stars/>
 	<header>
-		<Navbar links={["Inicio", "¿Quienes_Somos?", "Proyectos", "Equipo"]}/>
+		<Navbar names={["¿Quienes Somos?", "Proyectos", "Equipo"]} links={["inicio", "quienesSomos", "proyectos", "equipo"]}/>
 	</header>
 	<main>
-		<section class="inicio">
-			<FloatLetters letters={["C","u","b","i","T","z"]}/>
-			<p>Description ###################################################</p>
-			<a href="" target="_blank">Contactenos</a>
+		<section id="inicio">
+			<div class="letters">
+				<FloatLetters letters={["C","u","b","i","T","z"]}/>
+			</div>
+			<p class="description">Description ###################################################</p>
+			<div class="contact">
+				<a href="" target="_blank">Contactenos</a>
+			</div>
 			<div class="planet1"><Cube/></div>
 			<div class="planet2"><Cube/></div>
 			<div class="planet3"><Cube/></div>
 		</section>	
 		
-		<section id="¿quienes_somos?">
+		<section id="quienesSomos">
+			<div class="info">info</div>
+			<div class="clock">clock</div>
 			<Valores tam={200} valores={["Valor1","Valor2","Valor3"]}/>
+			<div class="youtube">youtube</div>
+			<div class="github">github</div>
 		</section>
 		
-		<section id="proyectos"></section>
-		
-		<section id="tecnologia"></section>
+		<section id="proyectos">
+			<h1>Proyectos</h1>
+			<div class="scrollContainer">
+			<div class="scroll">
+
+			</div>
+			<div class="proyectContainer">
+				<ProyectCard 
+				name='Juego de la vida'
+				description='Juego de la vida de Conway'
+				img='https://upload.wikimedia.org/wikipedia/commons/4/45/Glider.svg'
+				tech={['React', 'JavaScript']}
+				/>
+				<ProyectCard 
+				name='Tetris'
+				description='Juego de la vida de Conway'
+				img='https://upload.wikimedia.org/wikipedia/commons/4/45/Glider.svg'
+				tech={['React', 'JavaScript']}
+				/>
+			</div>
+		</div>
+		</section>
 		
 		<section id="equipo"></section>
 	</main>
@@ -38,7 +66,7 @@ import Cube from '../components/Cube.astro';
 		padding-inline: 8%;
 		display: flex;
 		flex-direction: column;
-		height: 100%;
+		gap: 18rem;
 	}
 	body{
 		margin: 0;
@@ -53,9 +81,11 @@ import Cube from '../components/Cube.astro';
 		display: sticky;
 		padding-block: 10px;
 	}
-	.inicio {
+
+	#inicio {
 		display: flex;
 		flex-direction: column;
+		height: 35rem;
 		
 		border-top: 2px solid #FFF;
 		border-inline: 2px solid #FFF;
@@ -64,6 +94,40 @@ import Cube from '../components/Cube.astro';
 		border-top-right-radius: 40px;
 		border-bottom-left-radius: 10px;
 		border-bottom-right-radius: 10px;
+	}
+	.letters{
+		flex: 2;
+	}
+	.description{
+		flex: 1;
+		align-self: center;
+		font-size: 1.5rem;
+		max-width: 25%;
+		text-wrap: wrap;
+		overflow-wrap: break-word;
+		text-align: center;
+	}
+	.contact{
+		flex: 1;
+		display: flex;
+		justify-content: center;
+	}
+	.contact a{
+		align-self: center;
+		color: var(--background-dark);
+		text-decoration: none;
+		font-family: "aldrich", sans-serif;
+		font-size: x-large;
+		background-color: var(--cubitz1-dark);
+		font-size: 1.8rem;
+		padding-inline: 1.2rem;
+		padding-block: 0.5rem;
+		border-radius: 18px;
+		transition: background-color 0.2s cubic-bezier(.4,0,.2,1);
+		margin-bottom: 6.25vw; 
+	}
+	.contact a:hover{
+		background-color: hsl(68, 100%, 90%);
 	}
 	.planet1 {
 		position: absolute;
@@ -110,35 +174,71 @@ import Cube from '../components/Cube.astro';
 		top: 10vw;
 		box-shadow: 0 0 31.25rem 5vw rgb(255, 109, 98, 0.5);
 	}
-	.inicio p{
-		align-self: center;
-		margin: 8.75vw 0 1.25rem 0;
-		font-size: 1.5rem;
-		max-width: 25%;
-		text-wrap: wrap;
-		overflow-wrap: break-word;
-		text-align: center;
+
+	#quienesSomos{
+		height: 20rem;
+		display: grid;
+		grid-template-columns: repeat(11, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-areas:
+			"info info info info info info clock clock values values values"
+			"info info info info info info clock clock values values values"
+			". github github github . youtube youtube youtube . . .  ";
 	}
-	@media (max-width: 1000px) {
-        .inicio p{
-			max-width: 50%;
-		}
-    }
-	.inicio a{
-		align-self: center;
-		color: var(--background-dark);
-		text-decoration: none;
-		font-family: "aldrich", sans-serif;
-		font-size: x-large;
-		background-color: var(--cubitz1-dark);
-		font-size: 1.8rem;
-		padding-inline: 1.2rem;
-		padding-block: 0.5rem;
-		border-radius: 18px;
-		transition: background-color 0.2s cubic-bezier(.4,0,.2,1);
-		margin-bottom: 6.25vw; 
+	.info{
+		border-radius: 24px;
+		margin-block: 0.5rem;
+		grid-area: info;
+		background-color: #ebff6849;
 	}
-	.inicio a:hover{
-		background-color: hsl(68, 100%, 90%);
+	.clock{
+		grid-area: clock;
+	}
+	.values{
+		grid-area: values;
+		background-color: aquamarine;
+	}
+	.youtube{
+		border-radius: 24px;
+		margin-block: 0.5rem;
+		grid-area: youtube;
+		background-color: #ff6c6249;
+	}
+	.github{
+		border-radius: 24px;
+		margin-block: 0.5rem;
+		grid-area: github;
+		background-color: #489dff49;
+	}
+
+	#proyectos{
+		
+	}
+	.scrollContainer{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+	}
+	.scroll{
+		flex: 1;
+		background-color: deeppink;
+		height: 100px;
+
+		animation: rotateAnimation linear 1s;
+		animation-timeline: scroll(block root);
+	}
+
+	@keyframes rotateAnimation {
+	0% {
+		height: 0px;
+	}
+	100% {
+		height: 600px;
+	}
+	}
+	.proyectContainer{
+		flex: 12;
+		display: flex;
+		flex-direction: column;
 	}
 </style>

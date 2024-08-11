@@ -15,30 +15,23 @@ const { letters } = Astro.props;
 
 <style>
     .container {
-        padding-top: 50px;
         display: flex;
+        pad: 2rem;
         justify-content: space-evenly;
         align-items: center;
-        padding-inline: 150px;
-        height: 15vw;
+        background-color: aquamarine;
+        height: 100%;
     }
     .text {
+        padding-block: 2rem;
         text-shadow: 0px 0px 3px #fff;
         cursor: default;
         height: max-content;
         margin: 0;
         font-family: "aldrich", sans-serif;
-        font-size: 9vw;
+        font-size: 14vw;
         position: relative;
         animation: space 1.8s ease-in-out infinite alternate;
-    }
-    @media (max-width: 1000px) {
-        .container {
-            padding-inline: 0;
-        }
-        .text {
-            font-size: 14vw;
-        }
     }
     .container p:nth-child(1) {
         animation-delay: 1s;

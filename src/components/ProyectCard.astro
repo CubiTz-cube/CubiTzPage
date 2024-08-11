@@ -1,0 +1,24 @@
+---
+interface Props {
+    name: string,
+    description: string,
+    img: string,
+    tech: string[]
+}
+
+const { name, description, img, tech} = Astro.props
+---
+
+<div>
+    <h2>{name}</h2>
+</div>
+
+<style>
+    div{
+        height: 400px;
+    }
+    h2 {
+        font-size: 2rem;
+        font-family: "aldrich", sans-serif;
+    }
+</style>
