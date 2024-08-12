@@ -1,0 +1,48 @@
+---
+interface Props {
+	values: string[]
+}
+const { values } = Astro.props;
+---
+
+<div>
+    <div class="value">{values[0]}</div>
+    <div class="value">{values[1]}</div>
+    <div class="value">{values[2]}</div>
+</div>
+
+<style>
+    div {
+        font-size: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        font-family: "aldrich", sans-serif;
+    }
+    div :nth-child(1){
+        font-size: 3rem;
+        opacity: 1;
+    }
+    div :nth-child(2){
+        font-size: 2rem;
+        opacity: 0.8;
+    }
+    div :nth-child(3){
+        font-size: 1rem;
+        opacity: 0.6;
+    }
+    .value{
+        text-align: center;
+    }
+    @media screen and (max-width: 800px){
+        div :nth-child(1){
+            font-size: 2rem;
+        }
+        div :nth-child(2){
+            font-size: 1.5rem;
+        }
+        div :nth-child(3){
+            font-size: 1rem;
+        }
+    }
+</style>

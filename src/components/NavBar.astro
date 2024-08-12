@@ -9,7 +9,7 @@ const { names,links } = Astro.props;
 ---
 <div>
     <nav>
-        <a href="#${links[0]}"><Icon /></a>
+        <a class="icon" href=`#${links[0]}`><Icon /></a>
         {links.slice(1).map((link,index) => (
             <a href={`#${link}`}>{names[index]}</a>
         ))}
@@ -30,19 +30,34 @@ const { names,links } = Astro.props;
 
         font-family: "aldrich", sans-serif;
     }
+    .icon {
+        flex-shrink: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     nav {
         display: flex;
         gap: 1rem;
         align-items: center;
     }
-    img {
-        width: 1.8rem;
-    }
     a {
-        font-size: 1.1rem;
+        flex: 1;
+        font-size: x-large;
         text-decoration: none;
         color: var(--textColor-dark);
         transition: color 0.2s cubic-bezier(.4,0,.2,1);
+    }
+    @media screen and (max-width: 800px){
+        a {
+            font-size: large;
+        }
+        
+    }
+    @media screen and (max-width: 400px){
+        a {
+            font-size: small;
+        }
     }
     a:hover {
         color: var(--cubitz2-dark);
