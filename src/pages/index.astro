@@ -12,7 +12,7 @@ import TeamCard from '../components/TeamCard.astro';
 <Layout title="CubiTz">
 	<Stars/>
 	<header>
-		<Navbar names={["¿Quienes Somos?", "Proyectos", "Equipo"]} links={["inicio", "quienesSomos", "proyectos", "equipo"]}/>
+		<Navbar names={["Info", "Proyectos", "Equipo"]} links={["inicio", "quienesSomos", "proyectos", "equipo"]}/>
 	</header>
 	<main>
 		<section id="inicio">
@@ -89,6 +89,7 @@ import TeamCard from '../components/TeamCard.astro';
 		z-index: 2;
 		display: flex;
 		justify-content: space-around;
+		align-items: center;
 		display: sticky;
 		padding-block: 10px;
 	}
