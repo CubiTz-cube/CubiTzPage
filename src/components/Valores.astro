@@ -1,25 +1,30 @@
 ---
 interface Props {
-	valores: string[]
+	values: string[]
     tam: number
 }
 
-const { valores,tam } = Astro.props
-var size =valores.length
+const { values,tam } = Astro.props
+var size =values.length
 var disminution=tam/size
+var opacity = 1 / size+0.2
 ---
 
 <div>
-    {valores.toString()}
-    {disminution}
+    {values.map((value,index)=>{
+        return <div class="value" style={`font-size: ${disminution*(values.length-index)}rem; opacity: ${opacity*(values.length-index)};`}>{value}</div>
+    })}
 </div>
 
 <style>
     div {
         font-size: 0.5rem;
         display: flex;
+        flex-direction: column;
         gap: 1rem;
         font-family: "aldrich", sans-serif;
-        grid-area: values;
+    }
+    .value{
+        text-align: center;
     }
 </style>

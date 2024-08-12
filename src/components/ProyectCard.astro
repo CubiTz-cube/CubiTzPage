@@ -3,23 +3,87 @@ interface Props {
     name: string,
     description: string,
     img: string,
-    tech: string[]
+    tech: string[][]
 }
 
 const { name, description, img, tech} = Astro.props
 ---
 
-<div>
-    <h2>{name}</h2>
+<div class="cardContainer">
+    <div class="card">
+        <h2 class="name">{name}</h2>
+        <div class="imgContainer"><img src={img} alt={name}/></div>
+        <p class="description">{description}</p>
+        <div class="tech">
+            {tech.map((t) => (
+                <div>
+                    <img src=`https://img.shields.io/badge/${t[0]}-${t[1].replace("#","")}?style=for-the-badge&logo=${t[0]}&logoColor=white` alt="tech"/>
+                </div>
+            ))}
+        </div>
+        <nav class="link"></nav>
+    </div>
 </div>
 
 <style>
-    div{
-        height: 400px;
-        background-color: cadetblue;
+    .cardContainer{
+        margin-left: 2rem;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 24px;
+        background-color: rgba(0, 0, 0, 0.432);
     }
-    h2 {
+    .card{
+        display: grid;
+        grid-template-rows: 0.5fr 3fr 1fr 0.2fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+         "name img"
+         "description img"
+         "link img"
+         "tech tech";
+        margin-block: 1rem;
+        margin-inline: 1.5rem;
+    }
+    @media screen and (max-width: 800px){
+        .card{
+            grid-template-rows: 0.5fr 2fr 1fr 0.5fr 0.2fr;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "name"
+            "img"
+            "description"
+            "link"
+            "tech";
+        }
+        
+    }
+    .name {
+        grid-area: name;
         font-size: 2rem;
         font-family: "aldrich", sans-serif;
+    }
+    .imgContainer {
+        grid-area: img;
+        display: flex;
+        justify-content: center;
+    }
+    img{
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+    }
+    .description {
+        grid-area: description;
+        font-size: 1rem;
+    }
+    .tech {
+        grid-area: tech;
+        font-size: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+    .link {
+        grid-area: link;
+        font-size: 1rem;
     }
 </style>
