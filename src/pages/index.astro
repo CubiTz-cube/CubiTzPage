@@ -31,8 +31,8 @@ import TeamCard from '../components/TeamCard.astro';
 				<p>Un grupo de estudiantes de la UCAB que se divierten creando proyectos variados y compartiéndolos con el mundo.</p>
 			</div>
 			<div class="values"><Values values={["Organización","Robustez","Calidad"]}/></div>
-			<a class="youtube">youtube</a>
-			<a class="github">github</a>
+			<a class="youtube" href="http://www.youtube.com/@CubiTz_" target="_blank" rel="noopener noreferrer"><h3>Youtube</h3></a>
+			<a class="github" href="https://github.com/CubiTz-cube" target="_blank" rel="noopener noreferrer"><h3>Github</h3></a>
 		</section>
 		
 		<section id="proyectos">
@@ -174,18 +174,30 @@ import TeamCard from '../components/TeamCard.astro';
 	.values{
 		grid-area: values;
 	}
-	.youtube{
-		border-radius: 24px;
-		grid-area: youtube;
-		background-color: #ff6c6249;
-		margin-inline: 1rem;
-	}
-	.github{
-		border-radius: 24px;
-		grid-area: github;
-		background-color: #489dff49;
-		margin-inline: 1rem;
-	}
+	.youtube, .github {
+        border-radius: 24px;
+        margin-inline: 1rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .youtube {
+        grid-area: youtube;
+        background-color: #ff6c6249;
+    }
+	.github {
+        grid-area: github;
+        background-color: #489dff49;
+    }
+    .youtube h3, .github h3 {
+        text-align: center;
+        font-size: clamp(2em, 2vw, 2.5em);
+        margin: 0;
+        color: white;
+    }
+    
+	
 
 	#proyectos{
 		
