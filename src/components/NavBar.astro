@@ -7,20 +7,25 @@ interface Props {
 
 const { names,links } = Astro.props;
 ---
-<div>
-    <nav>
-        <a class="icon" href=`#${links[0]}`><Icon /></a>
-        {links.slice(1).map((link,index) => (
-            <a href={`#${link}`}>{names[index]}</a>
-        ))}
-    </nav>
-</div>
+<nav>
+    <a class="icon" href=`#${links[0]}`><Icon /></a>
+    {links.slice(1).map((link,index) => (
+        <a href={`#${link}`}>{names[index]}</a>
+    ))}
+</nav>
 
 <style>
-    div{
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    nav {
         background-color: rgb(0, 0, 0 , 0.8);
         border-radius: 20px;
         backdrop-filter: blur(5px);
+        height: 2.5rem;
         
         display: flex;
         align-items: center;
@@ -29,16 +34,6 @@ const { names,links } = Astro.props;
         gap: 1rem;
 
         font-family: "aldrich", sans-serif;
-    }
-    .icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    nav {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
     }
     a {
         flex: 1;
@@ -50,6 +45,9 @@ const { names,links } = Astro.props;
     @media screen and (max-width: 800px){
         a {
             font-size: large;
+        }
+        nav{
+            height: 1.5rem;
         }
         
     }

@@ -27,14 +27,14 @@ const { name, description, img, tech} = Astro.props
 
 <style>
     .cardContainer{
-        margin-left: 2rem;
+        margin-left: 2vw;
         border: 1px solid rgb(255, 255, 255);
         border-radius: 24px;
         background-color: rgba(0, 0, 0, 0.432);
     }
     .card{
         display: grid;
-        grid-template-rows: 0.5fr 3fr 1fr 0.2fr;
+        grid-template-rows: 0.5fr 3fr 0.5fr 0.2fr;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: 
          "name img"
@@ -42,7 +42,34 @@ const { name, description, img, tech} = Astro.props
          "link img"
          "tech tech";
         margin-block: 1rem;
-        margin-inline: 1.5rem;
+        margin-inline: 1.5vw;
+    }
+    .name {
+        flex: 1;
+        grid-area: name;
+        font-size: 3rem;
+        font-family: "aldrich", sans-serif;
+        margin-bottom: 0;
+    }
+    .imgContainer {
+        flex: 1;
+        grid-area: img;
+        display: flex;
+        justify-content: center;
+        height: max-content;
+        justify-self: center;
+        align-self: center;
+    }
+    img{
+        flex: 1;
+        height: max-content;
+        width: 100%;
+        object-fit: contain;
+    }
+    .description {
+        flex: 1;
+        grid-area: description;
+        font-size: 2rem;
     }
     @media screen and (max-width: 800px){
         .card{
@@ -55,27 +82,14 @@ const { name, description, img, tech} = Astro.props
             "link"
             "tech";
         }
-        
-    }
-    .name {
-        grid-area: name;
-        font-size: 3rem;
-        font-family: "aldrich", sans-serif;
-        margin-bottom: 0;
-    }
-    .imgContainer {
-        grid-area: img;
-        display: flex;
-        justify-content: center;
-    }
-    img{
-        height: auto;
-        width: 100%;
-        object-fit: contain;
-    }
-    .description {
-        grid-area: description;
-        font-size: 2rem;
+        .name{
+            text-align: center;
+            font-size: 2rem;
+        }
+        .description {
+            font-size: 1rem;
+        }
+    
     }
     .tech {
         grid-area: tech;

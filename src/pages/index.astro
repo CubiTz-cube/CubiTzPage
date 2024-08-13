@@ -194,7 +194,7 @@ import TeamCard from '../components/TeamCard.astro';
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		gap: 0.5rem;
+		gap: 0.5vw;
 	}
 	.scroll{
 		border: 0;
@@ -219,7 +219,7 @@ import TeamCard from '../components/TeamCard.astro';
 	}
 	.semester{
 		color: var(--cubitz1-dark);
-		font-size: x-large;
+		font-size: clamp(1.5em, 2vw, 2.5em);
 		font-weight: lighter;
 		font-family: "lekton", sans-serif;
 		margin: 0;
@@ -238,7 +238,7 @@ import TeamCard from '../components/TeamCard.astro';
 	}
 	h2{
 		text-align: center;
-		font-size: 3rem;
+		font-size: clamp(2em, 3vw, 3em);
 		font-family: "aldrich", sans-serif;
 		animation: glow 2s ease-in-out infinite alternate;
 	}
