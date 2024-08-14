@@ -16,7 +16,7 @@ const { link } = Astro.props
     </svg>
   </div>
   <div class="cube">
-    <span class="side front">hover me</span>
+    <span class="side front">Github</span>
   </div>
 </a>
 
@@ -55,13 +55,13 @@ const { link } = Astro.props
   font-size: 0.8em;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: bold;
+  font-size: 1em;
+  font-family: "lekton", sans-serif;
 }
 
 .front {
-  background: #222229;
   color: #fff;
   border-radius: 0 12px 12px 0;
   transform: translate3d(0, 0, 1em);
@@ -91,7 +91,7 @@ const { link } = Astro.props
   left: 0%;
   opacity: 0;
   background: #fff;
-  box-shadow: 0 0 50px 30px #fff;
+  box-shadow: 0 0 40px 20px #fff;
   -webkit-transform: skewX(-20deg);
   -moz-transform: skewX(-20deg);
   -ms-transform: skewX(-20deg);
