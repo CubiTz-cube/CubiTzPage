@@ -48,6 +48,7 @@ import TeamCard from '../components/TeamCard.astro';
 				description='La base creada por Conway expandida con un sistema de guardado, pausa, sonido, personalización de tablero y soporte para varias células diferentes simultáneas.'
 				img='/CubiTzPage/gameOfLife.png'
 				tech={[['Python', "blue"],['Pygame', "#09C018"]]}
+				link="https://github.com/CubiTz-cube/Juego-de-la-vida"
 				/><hr>
 				<h3 class="semester">Segundo Semestre</h3>
 				<ProyectCard 
@@ -55,6 +56,7 @@ import TeamCard from '../components/TeamCard.astro';
 				description='Un Tetris de jugabilidad moderna con sistema de puntuaciones y cuentas. Con música, efectos de sonido y fondo animado.'
 				img='/CubiTzPage/tetris.jpg'
 				tech={[['Python', "blue"],['Pygame', "#09C018"]]}
+				link="https://github.com/CubiTz-cube/Tetris_Espacial"
 				/>
 				</div>
 			</div>
@@ -64,9 +66,6 @@ import TeamCard from '../components/TeamCard.astro';
 			<h2>Equipo</h2>
 			<div class="teamContainer">
 				<div><TeamCard name="Daniel" title='CEO' img="/CubiTzPage/daniel.png"/></div>
-				<div><TeamCard name="Jose" title='Empleado' img="/CubiTzPage/jose.png"/></div>
-				<div><TeamCard name="Jose" title='Empleado' img="/CubiTzPage/jose.png"/></div>
-				<div><TeamCard name="Jose" title='Empleado' img="/CubiTzPage/jose.png"/></div>
 				<div><TeamCard name="Jose" title='Empleado' img="/CubiTzPage/jose.png"/></div>
 			</div>
 		</section>
@@ -202,8 +201,6 @@ import TeamCard from '../components/TeamCard.astro';
         margin: 0;
         color: white;
     }
-    
-	
 
 	#proyectos{
 		
@@ -217,7 +214,7 @@ import TeamCard from '../components/TeamCard.astro';
 	.scroll{
 		border: 0;
 		height: auto;
-		width: 1px;
+		min-width: 1px;
 		background: #ffffff;
 		margin: 0 3vw;
 	}

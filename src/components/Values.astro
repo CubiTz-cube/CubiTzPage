@@ -20,29 +20,18 @@ const { values } = Astro.props;
         font-family: "aldrich", sans-serif;
     }
     div :nth-child(1){
-        font-size: 4rem;
+        font-size: clamp(4.5em, 5vw, 7em);
         opacity: 1;
     }
     div :nth-child(2){
-        font-size: 3rem;
+        font-size: clamp(3.5em, 4vw, 6em);
         opacity: 0.8;
     }
     div :nth-child(3){
-        font-size: 2rem;
+        font-size: clamp(2.5em, 3vw, 5em);
         opacity: 0.6;
     }
     .value{
         text-align: center;
-    }
-    @media screen and (max-width: 800px){
-        div :nth-child(1){
-            font-size: 2rem;
-        }
-        div :nth-child(2){
-            font-size: 1.5rem;
-        }
-        div :nth-child(3){
-            font-size: 1rem;
-        }
     }
 </style>
