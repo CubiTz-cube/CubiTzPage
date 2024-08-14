@@ -36,7 +36,11 @@ import TeamCard from '../components/TeamCard.astro';
 		</section>
 		
 		<section id="proyectos">
-			<h2>Proyectos</h2>
+			<div class="titleSvg">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path d="M14 4l-4 16"></path></svg>
+				<h2>Proyectos</h2>
+			</div>
+			
 			<div class="scrollContainer">
 				<div class="scroll">
 
@@ -58,12 +62,22 @@ import TeamCard from '../components/TeamCard.astro';
 				tech={[['Python', "blue"],['Pygame', "#09C018"]]}
 				link="https://github.com/CubiTz-cube/Tetris_Espacial"
 				/>
+				<ProyectCard 
+				name='Aplicación Fit - CubiTz Sports'
+				description='Registra actividades, calcula calorías y te da las estadísticas de tu progreso. ¡Todo con una interfaz gráfica minimalista!.'
+				img='/CubiTzPage/cubitzSport.png'
+				tech={[['C', "gray"],['Raylib', "#DB0E23"]]}
+				link="https://github.com/CubiTz-cube/AplicacionFit_CubitzSport"
+				/>
 				</div>
 			</div>
 		</section>
 		
 		<section id="equipo">
-			<h2>Equipo</h2>
+			<div class="titleSvg">
+				<svg width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path><path d="M15 19l2 2l4 -4"></path></svg>
+				<h2>Equipo</h2>
+			</div>
 			<div class="teamContainer">
 				<div><TeamCard name="Daniel" title='CEO' img="/CubiTzPage/daniel.png"/></div>
 				<div><TeamCard name="Jose" title='Empleado' img="/CubiTzPage/jose.png"/></div>
@@ -255,14 +269,24 @@ import TeamCard from '../components/TeamCard.astro';
 		text-align: center;
 		font-size: clamp(2em, 3vw, 3em);
 		font-family: "aldrich", sans-serif;
-		animation: glow 2s ease-in-out infinite alternate;
 	}
 	@keyframes glow {
         from {
-        text-shadow: 0 0 20px #2d9da9;
+		filter: drop-shadow(0 0 10px #298e99);
         }
         to {
-        text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+		filter: drop-shadow(0 0 10px #489dff) drop-shadow(0 0 3px #58d4e2);
         }
     }
+	.titleSvg{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5vw;
+		animation: glow 2s ease-in-out infinite alternate;
+	}
+	.titleSvg svg{
+		height: 100%;
+		width: 2.5em;
+	}
 </style>
