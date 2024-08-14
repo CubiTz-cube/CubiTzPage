@@ -71,13 +71,15 @@ import TeamCard from '../components/TeamCard.astro';
 			</div>
 		</section>
 	</main>
+	<footer>
+		footer
+	</footer>
 </Layout>
 <style>
 	main {
 		padding-inline: 8%;
 		display: flex;
 		flex-direction: column;
-		gap: 18rem;
 	}
 	body{
 		margin: 0;
@@ -93,10 +95,14 @@ import TeamCard from '../components/TeamCard.astro';
 		display: sticky;
 		padding-block: 10px;
 	}
+	section{
+		padding-block: 8rem;
+	}
 
 	#inicio {
 		display: flex;
 		flex-direction: column;
+		padding-block: 0;
 		
 		border-top: 2px solid #FFF;
 		border-inline: 2px solid #FFF;
@@ -231,7 +237,7 @@ import TeamCard from '../components/TeamCard.astro';
 	}
 	.semester{
 		color: var(--cubitz1-dark);
-		font-size: clamp(1.5em, 2vw, 2.5em);
+		font-size: clamp(1.5em, 1.5vw, 2em);
 		font-weight: lighter;
 		font-family: "lekton", sans-serif;
 		margin: 0;
