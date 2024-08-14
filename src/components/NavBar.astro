@@ -37,19 +37,15 @@ const { names,links } = Astro.props;
     }
     a {
         flex: 1;
-        font-size: x-large;
+        font-size: clamp(1em, 2vw, 3em);
         text-decoration: none;
         color: var(--textColor-dark);
         transition: color 0.2s cubic-bezier(.4,0,.2,1);
     }
     @media screen and (max-width: 800px){
-        a {
-            font-size: large;
-        }
         nav{
             height: 1.5rem;
         }
-        
     }
     @media screen and (max-width: 400px){
         a {
