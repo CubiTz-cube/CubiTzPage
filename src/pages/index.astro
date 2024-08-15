@@ -147,21 +147,26 @@ import TeamCard from '../components/TeamCard.astro';
 	}
 	.contact a{
 		align-self: center;
-		color: var(--background-dark);
+		color: #FFF;
 		text-decoration: none;
 		font-family: "aldrich", sans-serif;
 		font-size: x-large;
-		background-color: var(--cubitz1-dark);
-		font-size: clamp(1.5em, 3vw, 5em);
-		padding-inline: 1.2rem;
-		padding-block: 0.5rem;
+		border: 3px #FFF solid;
+		background-color: rgb(235, 255, 104, 0.5);
+		font-size: clamp(1.5em, 2.5vw, 4em);
+		padding-inline: 1rem;
+		padding-block: 0.3rem;
 		border-radius: 18px;
 		transition: background-color 0.2s cubic-bezier(.4,0,.2,1);
 		margin-bottom: 6.25vw; 
 	}
-	.contact a:hover{
-		background-color: hsl(68, 100%, 90%);
-	}
+	.contact a:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
 
 	#quienesSomos{
 		display: grid;
@@ -194,8 +199,9 @@ import TeamCard from '../components/TeamCard.astro';
 		grid-area: values;
 	}
 	.youtube, .github {
-        border-radius: 24px;
+        border-radius: 18px;
         margin-inline: 1rem;
+		border: 3px #FFF solid;
         text-decoration: none;
         display: flex;
         align-items: center;
@@ -247,12 +253,12 @@ import TeamCard from '../components/TeamCard.astro';
 		gap: 2rem;
 	}
 	.semester{
-		color: var(--cubitz1-dark);
-		font-size: clamp(1.5em, 1.5vw, 2em);
-		font-weight: lighter;
+		color: var(--cubitz3-dark);
+		font-size: clamp(1.3em, 1.3vw, 1.7em);
+		font-weight: bold;
 		font-family: "lekton", sans-serif;
 		margin: 0;
-	}
+    }
 
 	#equipo{
 		display: flex;

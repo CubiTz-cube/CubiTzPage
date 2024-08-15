@@ -22,9 +22,11 @@ const { link } = Astro.props
 
 <style>
 .button-icon {
+  background-color: rgb(235, 255, 104, 0.5);
   display: flex;
   border: 3px #fff solid;
-  border-radius: 12px;
+  border-radius: 18px;
+  overflow: hidden;
   width: fit-content;
   height: fit-content;
   cursor: pointer;
@@ -41,8 +43,6 @@ const { link } = Astro.props
 }
 
 .cube {
-  transition: all 0.4s;
-  transform-style: preserve-3d;
   width: 200px;
   height: 20px;
 }
@@ -52,12 +52,11 @@ const { link } = Astro.props
   height: 47px;
   width: 200px;
   display: flex;
-  font-size: 0.8em;
   justify-content: center;
   align-items: center;
   letter-spacing: 0.5px;
+  font-size: 1.2em;
   font-weight: bold;
-  font-size: 1em;
   font-family: "lekton", sans-serif;
 }
 

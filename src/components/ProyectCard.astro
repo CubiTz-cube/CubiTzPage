@@ -45,7 +45,8 @@ const { name, description, img, tech , link} = Astro.props
 
     .card{
         display: grid;
-        grid-template-rows: 0.5fr 3fr 0.5fr;
+        grid-template-rows: repeat(3, max-content);
+        row-gap: 1.5em;
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: 
          "name img"
@@ -55,36 +56,40 @@ const { name, description, img, tech , link} = Astro.props
         margin-inline: 1.5vw;
     }
     .name {
-        flex: 1;
         grid-area: name;
         font-size: clamp(1em, 2.5vw, 2.5em);
         font-family: "aldrich", sans-serif;
         margin-bottom: 0;
+        margin: 0;
     }
     .imgContainer {
-        flex: 1;
         grid-area: img;
         display: flex;
         justify-content: center;
         height: max-content;
         justify-self: center;
         align-self: center;
+        transition: scale 0.5s ease-out;
+    }
+    .imgContainer:hover{
+        scale: 1.1;
     }
     img{
         flex: 1;
         height: max-content;
         width: 100%;
         object-fit: contain;
+        border-radius: 16px;
     }
     .description {
-        flex: 1;
-        opacity: 0.9;
+        opacity: 0.85;
+        margin:0;
         grid-area: description;
         font-size: clamp(1em, 2vw, 2em);
     }
     @media screen and (max-width: 800px){
         .card{
-            grid-template-rows: 0.5fr 2fr 1fr 0.5fr 0.2fr;
+            grid-template-rows: repeat(4, max-content);
             grid-template-columns: 1fr;
             grid-template-areas: 
             "name"
@@ -101,13 +106,19 @@ const { name, description, img, tech , link} = Astro.props
         }
     
     }
+    .link {
+        align-self: flex-end;
+        grid-area: link;
+        font-size: 1rem;
+    }
     .tech {
         grid-area: tech;
         font-size: 1rem;
         display: flex;
+        margin-top: 0.5em;
         gap: 1rem;
-        margin-top: 1rem;
-        background-color: rgb(255, 255, 255, 0.432);
+        border-top: 2px solid rgb(255, 255, 255);
+        background-color: rgba(0, 0, 0, 0.432);
         padding: 0.5rem;
     }
     .imgContainerTech{
@@ -118,9 +129,5 @@ const { name, description, img, tech , link} = Astro.props
         width: max-content;
         border-radius: 12px;
         overflow: hidden;
-    }
-    .link {
-        grid-area: link;
-        font-size: 1rem;
     }
 </style>
