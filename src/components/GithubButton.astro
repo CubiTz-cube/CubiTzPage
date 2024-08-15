@@ -22,7 +22,8 @@ const { link } = Astro.props
 
 <style>
 .button-icon {
-  background-color: rgb(235, 255, 104, 0.5);
+  color: inherit;
+  background-color: var(--button);
   display: flex;
   border: 3px #fff solid;
   border-radius: 18px;
@@ -43,6 +44,7 @@ const { link } = Astro.props
 }
 
 .cube {
+  color: inherit;
   width: 200px;
   height: 20px;
 }
@@ -61,7 +63,7 @@ const { link } = Astro.props
 }
 
 .front {
-  color: #fff;
+  color: inherit;
   border-radius: 0 12px 12px 0;
   transform: translate3d(0, 0, 1em);
 }

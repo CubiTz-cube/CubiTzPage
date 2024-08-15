@@ -147,12 +147,12 @@ import TeamCard from '../components/TeamCard.astro';
 	}
 	.contact a{
 		align-self: center;
-		color: #FFF;
+		color: inherit;
 		text-decoration: none;
 		font-family: "aldrich", sans-serif;
 		font-size: x-large;
 		border: 3px #FFF solid;
-		background-color: rgb(235, 255, 104, 0.5);
+		background-color: var(--button);
 		font-size: clamp(1.5em, 2.5vw, 4em);
 		padding-inline: 1rem;
 		padding-block: 0.3rem;
@@ -206,6 +206,7 @@ import TeamCard from '../components/TeamCard.astro';
         display: flex;
         align-items: center;
         justify-content: center;
+		color: inherit;
     }
     .youtube {
         grid-area: youtube;
@@ -219,7 +220,7 @@ import TeamCard from '../components/TeamCard.astro';
         text-align: center;
         font-size: clamp(1em, 2vw, 2.5em);
         margin: 0;
-        color: white;
+		color: inherit;
     }
 
 	#proyectos{
