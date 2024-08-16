@@ -193,7 +193,8 @@ import TeamCard from '../components/TeamCard.astro';
 		border-radius: 24px;
 		margin-block: 0.5rem;
 		grid-area: info;
-		background-color: #9c9c9c49;
+		background-color: rgb(156, 156, 156, 0.2);
+		border: #FFF solid 2px
 	}
 	.values{
 		grid-area: values;
@@ -212,9 +213,15 @@ import TeamCard from '../components/TeamCard.astro';
         grid-area: youtube;
         background-color: #ff6c6249;
     }
+	.youtube:hover {
+        background-color: #ff6c6299;
+    }
 	.github {
         grid-area: github;
         background-color: #489dff49;
+    }
+	.github:hover {
+        background-color: #489dff99;
     }
     .youtube h3, .github h3 {
         text-align: center;
@@ -238,14 +245,6 @@ import TeamCard from '../components/TeamCard.astro';
 		min-width: 1px;
 		background: #ffffff;
 		margin: 0 3vw;
-	}
-	@keyframes rotateAnimation {
-	0% {
-		height: 0px;
-	}
-	100% {
-		height: 600px;
-	}
 	}
 	.proyectContainer{
 		flex: 12;
