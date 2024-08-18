@@ -98,12 +98,13 @@ import Github from '../components/svg/github.astro';
 				<div><TeamCard name="Jose" title='Empleado' img="/CubiTzPage/jose.png"/></div>
 			</div>
 		</section>
+		
+		<footer>
+			<p>©2024 CubiTz. Casi todos los derechos reservados</p>
+			<a href="https://www.youtube.com/midudev" target="_blank" rel="noopener noreferrer" >Agradecimientos a Midudev</a>
+			<a href="https://t.me/DanDragonay" target="_blank" rel="noopener noreferrer">Contacto</a>
+		</footer>
 	</main>
-	<footer>
-		<p>©2024 CubiTz. Casi todos los derechos reservados</p>
-		<a href="https://www.youtube.com/midudev" target="_blank" rel="noopener noreferrer" >Agradecimientos a Midudev</a>
-		<a href="https://t.me/DanDragonay" target="_blank" rel="noopener noreferrer">Contacto</a>
-	</footer>
 </Layout>
 <style>
 	main {
@@ -195,6 +196,13 @@ import Github from '../components/svg/github.astro';
 		grid-area: info;
 		background-color: rgb(156, 156, 156, 0.2);
 		border: #FFF solid 2px
+	}
+	.info h2{
+		margin-block: 1rem;
+	}
+	.info p{
+		font-size: clamp(1.3em, 1.3vw, 1.7em);
+		margin-inline: 3vw;
 	}
 	.values{
 		grid-area: values;
@@ -292,11 +300,11 @@ import Github from '../components/svg/github.astro';
 
 	footer{
 		display: flex;
-		gap: 3rem;
+		gap: 3vw;
 		justify-content: center;
 		align-items: center;
 		height: 5rem;
-		font-size: 1em;
+		font-size: clamp(0.5em, 0.8vw, 1em);
 		color: inherit;
 	}
 	footer a{
