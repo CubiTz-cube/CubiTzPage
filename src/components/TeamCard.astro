@@ -25,23 +25,24 @@ const { name, title, img  } = Astro.props;
         flex-direction: column;
     }
     .nameContainer{
-        flex: 1;
+        flex: 0.6;
         display: flex;
-        flex-direction: row;
         gap: 1rem;
         justify-content: center;
         align-items: baseline;
-        font-family: "lekton", sans-serif;
         text-align: center;
     }
     .name {
         font-weight: bold;
         font-size: xx-large;
         margin: 0;
+        color: var(--cubitz1-dark);
+        font-family: "aldrich", sans-serif;
     }
     .title{
         font-size: x-large;
         margin: 0;
+        font-family: "lekton", sans-serif;
     }
     .imgContainer{
         flex: 8;

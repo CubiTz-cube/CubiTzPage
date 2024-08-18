@@ -1,5 +1,6 @@
 ---
-import GithubButton from "./GithubButton.astro"
+import Github from './svg/github.astro';
+import Button from './Button.astro';
 
 interface Props {
     name: string,
@@ -18,7 +19,9 @@ const { name, description, img, tech , link} = Astro.props
         <div class="imgContainer"><img src={img} alt={name}/></div>
         <p class="description">{description}</p>
         <div class="link">
-            <GithubButton link={link}/>
+            <Button text="Github" link={link} color="#489dff55">
+                <Github/>
+            </Button>
         </div>
         <nav class="link"></nav>
     </div>
@@ -111,6 +114,8 @@ const { name, description, img, tech , link} = Astro.props
         align-self: flex-end;
         grid-area: link;
         font-size: 1rem;
+        max-width: 50%;
+
     }
     .tech {
         grid-area: tech;

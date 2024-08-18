@@ -6,7 +6,10 @@ import Values from '../components/Values.astro';
 import FloatLetters from '../components/FloatLetters.astro';
 import ProyectCard from '../components/ProyectCard.astro';
 import TeamCard from '../components/TeamCard.astro';
-
+import Button from '../components/Button.astro';
+import Telegram from '../components/svg/telegram.astro';
+import Youtube from '../components/svg/youtube.astro';
+import Github from '../components/svg/github.astro';
 ---
 
 <Layout title="CubiTz">
@@ -21,7 +24,11 @@ import TeamCard from '../components/TeamCard.astro';
 			</div>
 			<p class="description">Somos un grupo apasionado por entregar lo mejor en cada proyecto</p>
 			<div class="contact">
-				<a href="https://t.me/DanDragonay" target="_blank">Contactenos</a>
+				<span>
+				<Button text="Contactenos" link="https://t.me/DanDragonay">
+						<Telegram/>
+				</Button>
+				</span>
 			</div>
 		</section>	
 		
@@ -31,8 +38,16 @@ import TeamCard from '../components/TeamCard.astro';
 				<p>Un grupo de estudiantes de la UCAB que se divierten creando proyectos variados y compartiéndolos con el mundo.</p>
 			</div>
 			<div class="values"><Values values={["Organización","Robustez","Calidad"]}/></div>
-			<a class="youtube" href="http://www.youtube.com/@CubiTz_" target="_blank" rel="noopener noreferrer"><h3>Youtube</h3></a>
-			<a class="github" href="https://github.com/CubiTz-cube" target="_blank" rel="noopener noreferrer"><h3>Github</h3></a>
+			<div class="youtube">
+				<Button text="Youtube" link="https://t.me/DanDragonay" color="#ff6d6255">
+					<Youtube/>
+				</Button>
+			</div>
+			<div class="github">
+					<Button text="Github" link="https://t.me/DanDragonay" color="#489dff55">
+						<Github/>
+					</Button>
+			</div>
 		</section>
 		
 		<section id="proyectos">
@@ -90,7 +105,7 @@ import TeamCard from '../components/TeamCard.astro';
 </Layout>
 <style>
 	main {
-		padding-inline: 8%;
+		padding-inline: 8vw;
 		display: flex;
 		flex-direction: column;
 	}
@@ -144,29 +159,12 @@ import TeamCard from '../components/TeamCard.astro';
 		flex: 1;
 		display: flex;
 		justify-content: center;
+		margin-bottom: 2rem;
 	}
-	.contact a{
-		align-self: center;
-		color: inherit;
-		text-decoration: none;
-		font-family: "aldrich", sans-serif;
-		font-size: x-large;
-		border: 3px #FFF solid;
-		background-color: var(--button);
-		font-size: clamp(1.5em, 2.5vw, 4em);
-		padding-inline: 1rem;
-		padding-block: 0.3rem;
-		border-radius: 18px;
-		transition: background-color 0.2s cubic-bezier(.4,0,.2,1);
-		margin-bottom: 6.25vw; 
+	.contact span{
+		max-width: 20rem;
+		min-width: 10rem;
 	}
-	.contact a:hover {
-  background: rgb(61, 106, 255);
-  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
 
 	#quienesSomos{
 		display: grid;
@@ -200,34 +198,16 @@ import TeamCard from '../components/TeamCard.astro';
 		grid-area: values;
 	}
 	.youtube, .github {
-        border-radius: 18px;
-        margin-inline: 1rem;
-		border: 3px #FFF solid;
-        text-decoration: none;
+        margin-inline: 1vw;
         display: flex;
         align-items: center;
         justify-content: center;
-		color: inherit;
     }
     .youtube {
         grid-area: youtube;
-        background-color: #ff6c6249;
-    }
-	.youtube:hover {
-        background-color: #ff6c6299;
     }
 	.github {
         grid-area: github;
-        background-color: #489dff49;
-    }
-	.github:hover {
-        background-color: #489dff99;
-    }
-    .youtube h3, .github h3 {
-        text-align: center;
-        font-size: clamp(1em, 2vw, 2.5em);
-        margin: 0;
-		color: inherit;
     }
 
 	#proyectos{
@@ -237,14 +217,14 @@ import TeamCard from '../components/TeamCard.astro';
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		gap: 0.5vw;
+		gap: 1.5vw;
 	}
 	.scroll{
 		border: 0;
 		height: auto;
 		min-width: 1px;
 		background: #ffffff;
-		margin: 0 3vw;
+		margin: 1rem 10px;
 	}
 	.proyectContainer{
 		flex: 12;
@@ -259,6 +239,17 @@ import TeamCard from '../components/TeamCard.astro';
 		font-family: "lekton", sans-serif;
 		margin: 0;
     }
+	.semester:before{
+		content: "";
+		display: block;
+		width: 20px;
+		height: 20px;
+		background-color: var(--cubitz3-dark);
+		position: absolute;
+		left: 8vw;
+		transform: translateY( 8px);
+		border-radius: 50%;
+    }
 
 	#equipo{
 		display: flex;
@@ -271,6 +262,7 @@ import TeamCard from '../components/TeamCard.astro';
 		row-gap: 1rem;
 		column-gap: 2rem;
 	}
+	
 	h2{
 		text-align: center;
 		font-size: clamp(2em, 3vw, 3em);

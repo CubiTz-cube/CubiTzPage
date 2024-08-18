@@ -1,0 +1,88 @@
+---
+interface Props {
+    text: string,
+    link: string,
+    color?: string,
+}
+
+const { text ,link, color } = Astro.props
+---
+
+<a class="button" href={link} target="_blank" rel="noopener noreferrer" style=`background-color: ${color ? color: "var(--button)"}`>
+  <div class="icon">
+    <slot />
+  </div>
+  <div class="back">
+    <span class="front">{text}</span>
+  </div>
+</a>
+
+<style>
+.button {
+  color: inherit;
+  display: flex;
+  border: 3px #fff solid;
+  border-radius: 18px;
+  overflow: hidden;
+  height: max-content;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.icon {
+  background-color: #fff;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    color: inherit;
+}
+
+.front {
+  color: inherit;
+  font-family: "aldrich", sans-serif;
+    font-size: clamp(0.8em, 1.8vw, 2.5em);
+}
+
+.button:hover {
+  background: rgb(61, 106, 255);
+  box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+.button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+</style>
