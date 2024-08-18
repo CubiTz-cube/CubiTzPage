@@ -100,7 +100,9 @@ import Github from '../components/svg/github.astro';
 		</section>
 	</main>
 	<footer>
-		footer
+		<p>©2024 CubiTz. Casi todos los derechos reservados</p>
+		<a href="https://www.youtube.com/midudev" target="_blank" rel="noopener noreferrer" >Agradecimientos a Midudev</a>
+		<a href="https://t.me/DanDragonay" target="_blank" rel="noopener noreferrer">Contacto</a>
 	</footer>
 </Layout>
 <style>
@@ -262,7 +264,7 @@ import Github from '../components/svg/github.astro';
 		row-gap: 1rem;
 		column-gap: 2rem;
 	}
-	
+
 	h2{
 		text-align: center;
 		font-size: clamp(2em, 3vw, 3em);
@@ -286,5 +288,23 @@ import Github from '../components/svg/github.astro';
 	.titleSvg svg{
 		height: 100%;
 		width: 2.5em;
+	}
+
+	footer{
+		display: flex;
+		gap: 3rem;
+		justify-content: center;
+		align-items: center;
+		height: 5rem;
+		font-size: 1em;
+		color: inherit;
+	}
+	footer a{
+		text-decoration: none;
+		color: inherit;
+	}
+	footer a:hover{
+		text-decoration: underline;
+		color: var(--cubitz1-dark);
 	}
 </style>
