@@ -16,8 +16,14 @@ const { title } = Astro.props;
 		<meta name="description" content="Hola!, somos CubiTz y esta es nuestra página web." />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="./logo.svg" />
+		<link rel="shortcut icon" href="./logo.svg" type="image/svg+xml" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<meta property="og:image" content="logo.svg" />
+		<meta property="og:description" content="Hola!, somos CubiTz y esta es nuestra página web." />
+		<meta property="og:title" content={title} />
+		<meta name="twitter:title" content={title} />
 	</head>
 	<body id="inicio">
 		<slot />
